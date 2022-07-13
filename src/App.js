@@ -1,5 +1,9 @@
 import { useState, useEffect } from "react";
-import { loadFromLocalStorage, writeToLocalStorage } from "./util/localstorage";
+import {
+  loadFromLocalStorage,
+  writeToLocalStorage,
+  deleteFromLocalStorage,
+} from "./util/localstorage";
 import styled from "styled-components";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import HomePage from "./pages/HomePage.js";
@@ -57,7 +61,8 @@ function App() {
       setCurrentUser(user);
     } catch (err) {
       setCurrentUser(null);
-      alert("Login failed");
+      console.log(err);
+      alert("Login failed!");
     }
   };
 
@@ -76,6 +81,7 @@ function App() {
                 <Button
                   onClick={() => {
                     setCurrentUser(null);
+                    deleteFromLocalStorage();
                     navigate("/");
                   }}
                 >
