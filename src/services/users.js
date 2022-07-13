@@ -10,6 +10,7 @@ export const login = async (nickName) => {
     });
     if (response.ok) {
       const user = await response.json();
+      console.log(user);
       return user;
     } else {
       throw new Error(`${response.status}`);
