@@ -1,3 +1,3 @@
 ## Deployments
 
-- Auf Vercel am 13.07.2022
+- Auf Vercel am Mittwoch, 13.07.2022
